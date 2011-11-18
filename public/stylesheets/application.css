@@ -46,7 +46,7 @@ body {
   background: #eee;
   color: #000;
   font-family: Lucida Grande, Verdana, Arial, sans-serif;
-  font-size: 85%;
+  font-size: 12px;
   line-height:1.5;
   margin: 0;
   padding: 0;
@@ -329,7 +329,7 @@ nav#menu ul {
   -moz-border-radius: 6px 6px 6px 6px;
   -webkit-border-radius: 6px 6px 6px 6px;
   border-radius: 6px 6px 6px 6px;
-  height:40px;
+  height:42px;
   -moz-box-shadow: 1px 1px 6px 2px #aaa;
   -webkit-box-shadow: 1px 1px 6px 2px #aaa;
   box-shadow: 1px 1px 6px 2px #aaa;
