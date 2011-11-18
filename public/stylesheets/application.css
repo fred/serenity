@@ -1,0 +1,431 @@
+/*
+  Override default refinery application CSS below.
+  Formatting applies to all frontend.
+*/
+
+
+/* 
+------------------------------------------------
+[Table of contents]
+
+ 0.Reset
+ 1.Global
+ 2.Layout
+ 3.Main
+ 4.Sidebars
+ 5.Header
+ 6.Navigation
+ 7.Footer
+ 8.CSS Support
+
+[Font sizes - based on 75%/12px body font-size]
+36px = 3em
+30px = 2.5em
+24px = 2em
+18px = 1.5em
+16px = 1.333333em
+15px = 1.2em
+14px = 1.1667em
+12px = 1em
+11px = .9167em
+10px = .8333em
+
+Equation for font sizing: 
+-Desired px ÷ Default (or parent) px = em size
+------------------------------------------------*/
+
+/**
+ * 0.RESET 
+ */
+@import "reset.css";
+
+/**
+ * 1.GLOBAL
+ */
+body {
+  background: #eee;
+  color: #000;
+  font-family: Lucida Grande, Verdana, Arial, sans-serif;
+  font-size: 85%;
+  line-height:1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.2em;
+  line-height: 1em;
+  margin-bottom: .5em; 
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+h4 {
+  font-size: 1.2em;
+  line-height: 1.25em;
+  margin-bottom: 1.25em; 
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em; 
+}
+
+h6 {
+  font-size: .8333em;
+  font-weight: bold;
+  line-height: 1.8em;
+  margin-bottom: 1.8em;
+}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+p a:link {
+  text-decoration: underline;
+}
+
+a:link, a:visited {
+  color: #069;
+  outline: none;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 1px dotted;
+}
+
+a:hover, a:active, li a.active {
+  color: #069;
+  outline: none;
+  text-decoration: underline;
+}
+
+
+
+/*******************
+ FRED Custom Theme
+*******************/
+#page, #site_bar_content, #page_container > footer, #page_container > header {
+  width: 99%;
+  margin: 0px auto;
+}
+#page {
+  padding-bottom: 40px;
+}
+
+#body_content_left {
+  float: left;
+  width: 99%;
+}
+#body_content_right {
+  float: right;
+  width: 0px;
+  display:none;
+}
+#body_content_left .inner {
+  padding-right: 10px;
+  width: 99%;
+  float: left;
+}     
+#body_content_right .inner {
+  padding-left: 10px;
+}     
+#body_content.no_body_content_left #body_content_right,
+  #body_content.no_body_content_right #body_content_left {
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+h1#logo {
+  background: transparent url('/images/logo.png') 0px 6px no-repeat;
+  height: 105px;
+  padding-top: 5px;
+}
+
+.inner img {
+  margin: 0 20px 20px 0;
+  border: 1px solid #CCC;
+  padding: 1px;
+  box-shadow: 4px 4px 8px #999;
+  -moz-box-shadow: 4px 4px 8px #999;
+  -webkit-box-shadow: 4px 4px 8px #999;
+}
+
+
+
+/* Common Styling */
+li ul, li ol { margin: 0; }
+ul, ol { margin: 0 1.5em 1.5em 0; padding-left: 1.5em; }
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+dl { margin: 0 0 1.5em 0; }
+dl dt { font-weight: bold; }
+dd { margin-left: 1.5em; }
+table { margin-bottom: 1.5em; width:100%; }
+th, tr, td { padding: 0.1em 0.5em; vertical-align: middle; }
+hr { background: #666; border: none; clear: both; float: none; height: 1px; margin: -1px 0 1.5em; width: 100%; }
+fieldset { border: 1px solid #ccc; margin: .5em 0; padding: 1em; }
+
+/**
+ * 2.LAYOUT
+ */
+#page_container {
+  margin: 0 4% 30px 4%;
+  padding: 0 20px;
+  width: auto;
+  background-color: #fff;
+  border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-box-shadow: 2px 2px 20px 4px #999999;
+  -webkit-box-shadow: 2px 2px 20px 4px #999999;
+  box-shadow: 2px 2px 20px 4px #999999;
+  min-height: 400px;
+}
+
+/* add this class to div#wrapper in page.tpl to show grid */
+.showgrid {
+  background: url(images/grid.gif) repeat-y;
+}
+
+/**
+ * 3.MAIN
+ */
+/* 1 column: global values*/
+#main {
+  margin: 0 0 1.5em;
+  position: relative;
+  padding: 0 10px;
+}
+
+/* 3 columns */
+body.two-sidebars #main {
+  float: left;
+  margin: 0 20px 0 240px;
+  padding: 0;
+  width: 460px;
+}
+
+/* 2 columns: sidebar-first */
+body.sidebar-first #main {
+  float: right;
+  margin: 0;
+  padding: 0;
+  width: 700px;
+}
+
+/* 2 columns: sidebar-second */
+body.sidebar-second #main {
+  float: left;
+  margin: 0 20px 0 0;
+  padding: 0;
+  width: 700px;
+}
+
+/**
+ * 4.SIDEBARS
+ */
+/* 3 columns: sidebar-first */
+body.two-sidebars #sidebar-first {
+  float: left;
+  margin: 0 20px 0 -720px;
+  padding: 0;
+  width: 220px;
+}
+
+/* 3 columns: sidebar-second */
+body.two-sidebars #sidebar-second {
+  float: left;
+  margin: 0;
+  padding: 0px;
+  width: 220px;
+}
+
+/* 2 columns: sidebar-first */
+body.sidebar-first #sidebar-first {
+  float: left;
+  margin: 0 20px 0 0;
+  padding: 0;
+  width: 220px;
+}
+
+/* 2 columns: sidebar-second */
+body.sidebar-second #sidebar-second {
+  float: right;
+  margin: 0;
+  padding: 0;
+  width: 220px;
+}
+
+/**
+ * 5.HEADER
+ */
+#header {
+  margin: 0 0 0.6em;
+  padding: 0.4em 0 0;
+  position: relative;
+}
+
+#header #logo {
+  float: left;
+  margin: 0 1em 0 0;
+}
+
+#header #site-name-slogan {
+  float: left;
+}
+
+#header #site-name {
+  font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 0;
+}
+
+#header #site-name a:hover {
+  text-decoration: none;
+}
+
+#header #site-slogan {
+  margin: 0;
+}
+
+/**
+ * 6.NAVIGATION
+ */
+nav#menu {
+  margin: 0 0 1.5em;
+  padding: 0;
+  font-size:1.2em;
+  clear:both;
+}
+
+nav#menu ul {
+  background: #ddd;
+  margin: 0;
+  padding: 0;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  height:40px;
+  -moz-box-shadow: 1px 1px 6px 2px #aaa;
+  -webkit-box-shadow: 1px 1px 6px 2px #aaa;
+  box-shadow: 1px 1px 6px 2px #aaa;
+}
+
+nav#menu ul li {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+nav#menu ul li a {
+  display: block;
+  float: left;
+  line-height: 3em;
+  padding: 0 1em;
+}
+
+nav#menu ul.secondary-menu {
+  background: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+nav#menu ul.secondary-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+nav#menu ul.secondary-menu li a {
+  display: block;
+  float: left;
+  line-height: 3em;
+  padding: 0 1em;
+}
+
+
+.menu li.selected > a {
+  font-weight: bold;
+  text-decoration:underline;
+}
+
+#skip-link {
+  position: absolute;
+}
+
+.breadcrumb {
+  padding-bottom: 5px;
+  display: none;
+}
+
+/* menus and item lists */
+.item-list ul {
+  margin: 0;
+  padding: 0 0 0 1.5em;
+}
+.item-list ul li {
+  margin: 0;
+  padding: 0;
+}
+
+ul.menu li {
+  margin: 0;
+  padding: 0;
+}
+
+ul.inline {
+  clear: both;
+}
+
+ul.inline li {
+  margin: 0;
+  padding: 0 1em 0 0;
+}
+
+
+/**
+ * 6.BLOCKS
+ */
+.block {
+  margin-bottom: 1.5em;
+}
+
+/**
+ * 7.FOOTER
+ */
+footer {
+ padding: 10px 0;
+}
+
+/**
+ * 8.CSS SUPPORT
+ *
+ * Built-in classes:
+ * .clearfix                            | float clearing
+ * .element-invisible                   | hide element visually
+ * .element-invisible.element-focusable | allow element to be focusable when navigated to via keyboard
+ * .element-hidden                      | hide element from all users
+ */
