@@ -9,6 +9,8 @@ source 'http://rubygems.org'
 gem 'fog'
 gem 'mysql2', '0.2.13'
 
+gem 'dalli'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
